@@ -1,11 +1,7 @@
 package PetCareEmpresa.modelo;
-import java.lang.classfile.instruction.ExceptionCatch;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
-import PetCareEmpresa.modelo.Mascota;
-import PetCareEmpresa.modelo.EstadoCita;
-import PetCareEmpresa.modelo.Veterinario;
-import PetCareEmpresa.modelo.Consultorio;
 
 
 public class Cita {

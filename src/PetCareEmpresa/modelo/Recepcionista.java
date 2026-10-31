@@ -1,6 +1,6 @@
 package PetCareEmpresa.modelo;
 
-public class Recepcionista extends Persona{
+public class Recepcionista extends Persona {
     private String turno;
 
     public Recepcionista(String nombre, String apellido, String telefono, String correo, String turno) {

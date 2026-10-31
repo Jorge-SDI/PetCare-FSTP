@@ -1,6 +1,6 @@
 package PetCareEmpresa.modelo;
 
-public class Perro extends Mascota{
+public class Perro extends Mascota {
     private String raza;
     private String nivelEnergia;
 

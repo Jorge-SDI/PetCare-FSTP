@@ -1,6 +1,6 @@
 package PetCareEmpresa.modelo;
 
-public class Veterinario extends Persona{
+public class Veterinario extends Persona {
     private String cedulaProfesional;
     private String especialidad;
 

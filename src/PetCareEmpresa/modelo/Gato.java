@@ -1,6 +1,6 @@
 package PetCareEmpresa.modelo;
 
-public class Gato extends Mascota{
+public class Gato extends Mascota {
     private boolean esDomestico;
 
     public Gato(String nombre, int edad, double peso, boolean esDomestico){
