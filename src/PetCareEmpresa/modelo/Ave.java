@@ -1,6 +1,6 @@
 package PetCareEmpresa.modelo;
 
-public class Ave extends Mascota{
+public class Ave extends Mascota {
     private double longitudAlas;
 
     public Ave(String nombre, int edad, double peso, double longitudAlas) {

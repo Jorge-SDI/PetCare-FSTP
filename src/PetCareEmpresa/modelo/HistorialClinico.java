@@ -1,8 +1,8 @@
 package PetCareEmpresa.modelo;
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.ArrayList;
-import PetCareEmpresa.modelo.Consulta;
 
 public class HistorialClinico {
     //conjunto de todas las consultas de una mascota en especifico
