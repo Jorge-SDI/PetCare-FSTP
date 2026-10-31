@@ -1,4 +1,6 @@
-package PetCareEmpresa.modelo;
+package PetCareEmpresa;
+
+import PetCareEmpresa.modelo.Persona;
 
 public class Veterinario extends Persona {
     private String cedulaProfesional;

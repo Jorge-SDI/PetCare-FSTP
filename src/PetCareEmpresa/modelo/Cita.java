@@ -1,5 +1,7 @@
 package PetCareEmpresa.modelo;
 
+import PetCareEmpresa.Veterinario;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 
