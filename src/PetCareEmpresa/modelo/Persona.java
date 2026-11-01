@@ -1,16 +1,19 @@
 package PetCareEmpresa.modelo;
 
 public abstract class Persona {
-    protected String nombre;
-    protected String apellido;
-    protected String telefono;
-    protected String correo;
+    private String nombre;
+    private String apellido;
+    private String telefono;
+    private String correo;
+    private int idPersona;
+    private static int contadorId = 1;
 
     public Persona() {
         this.nombre = "";
         this.apellido = "";
         this.telefono = "";
         this.correo = "";
+        this.idPersona = 0;
     }
 
     public Persona(String nombre, String apellido, String telefono, String correo) {
@@ -18,6 +21,8 @@ public abstract class Persona {
         this.apellido = apellido;
         this.telefono = telefono;
         this.correo = correo;
+        this.idPersona = contadorId;
+        Persona.contadorId++;
     }
 
     public void setNombre(String nombre) {
@@ -52,13 +57,17 @@ public abstract class Persona {
         return correo;
     }
 
+    public int getIdPersona() {
+        return idPersona;
+    }
+
     @Override
     public String toString() {
-        return "Persona{" +
-                "nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", telefono='" + telefono + '\'' +
-                ", correo='" + correo + '\'' +
-                '}';
+        return "Persona: " +
+                "Nombre: '" + nombre + '\'' +
+                ", apellido: " + apellido + '\'' +
+                ", telefono: " + telefono + '\'' +
+                ", correo: " + correo +
+                ", idPersona: " + idPersona;
     }
 }
