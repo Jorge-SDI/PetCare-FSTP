@@ -34,10 +34,10 @@ public class Consulta {
     @Override
     public String toString() {
         return "Consulta{" +
-                "fecha=" + fecha +
-                ", diagnostico='" + diagnostico + '\'' +
-                ", observaciones='" + observaciones + '\'' +
-                ", tratamiento='" + tratamiento + '\'' +
+                "Fecha: " + fecha +
+                ", Diagnostico: " + diagnostico + '\'' +
+                ", Observaciones: " + observaciones + '\'' +
+                ", Tratamiento: " + tratamiento + '\'' +
                 '}';
     }
 }

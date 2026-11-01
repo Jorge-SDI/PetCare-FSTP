@@ -10,4 +10,10 @@ public class Consultorio {
     public int getNumeroConsultorio() {
         return numeroConsultorio;
     }
+
+    @Override
+    public String toString() {
+        return "Consultorio:" +
+                "Numero de consultorio: " + numeroConsultorio;
+    }
 }
