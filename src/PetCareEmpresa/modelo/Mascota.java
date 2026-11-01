@@ -51,7 +51,7 @@ public abstract class Mascota {
 
     public void setPeso(double peso) {
         if (!Double.isFinite(peso) || peso <= 0) {
-            throw new IllegalArgumentException("El peso debe ser un valor positivo y válido.");
+            throw new IllegalArgumentException("El peso debe ser un valor positivo y valido.");
         }
         this.peso = peso;
     }
