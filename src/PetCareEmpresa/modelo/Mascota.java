@@ -1,14 +1,26 @@
 package PetCareEmpresa.modelo;
 
-public abstract class Mascota {
-    protected String nombre;
-    protected int edad;
-    protected double peso;
+import java.time.LocalDate;
+import java.util.Objects;
 
-    public Mascota(String nombre, int edad, double peso) {
-        this.nombre = nombre;
-        this.edad = edad;
-        this.peso = peso;
+public abstract class Mascota {
+    private final int idMascota;
+    private String nombre;
+    private int edad;
+    private double peso;
+    private Dueno dueno;
+    private HistorialClinico  historialClinico;
+
+    public Mascota(int idMascota, String nombre, int edad, double peso, Dueno dueno) {
+        if(idMascota <= 0){
+            throw new IllegalArgumentException("Id mascota invalido");
+        }
+        this.idMascota = idMascota;
+        setNombre(nombre);
+        setEdad(edad);
+        setPeso(peso);
+        this.dueno = Objects.requireNonNull(dueno);
+        this.historialClinico = new HistorialClinico(LocalDate.now())
     }
 
     public String getNombre() {
@@ -16,6 +28,9 @@ public abstract class Mascota {
     }
 
     public void setNombre(String nombre) {
+        if (nombre == null || nombre.isBlank()) {
+            throw new IllegalArgumentException("El nombre no puede estar vacío.");
+        }
         this.nombre = nombre;
     }
 
@@ -24,6 +39,9 @@ public abstract class Mascota {
     }
 
     public void setEdad(int edad) {
+        if(edad < 0){
+            throw new IllegalArgumentException("El edad no puede ser cero o negativo.");
+        }
         this.edad = edad;
     }
 
@@ -32,17 +50,33 @@ public abstract class Mascota {
     }
 
     public void setPeso(double peso) {
+        if (!Double.isFinite(peso) || peso <= 0) {
+            throw new IllegalArgumentException("El peso debe ser un valor positivo y válido.");
+        }
         this.peso = peso;
+    }
+
+    public int getIdMascota() {
+        return idMascota;
+    }
+
+    public Dueno getDueno() {
+        return dueno;
+    }
+
+    public HistorialClinico getHistorialClinico() {
+        return historialClinico;
     }
 
     public abstract void emitirSonido();
 
     @Override
     public String toString() {
-        return "Mascota{" +
-                "nombre='" + nombre + '\'' +
-                ", edad=" + edad +
-                ", peso=" + peso +
-                '}';
+        return "Mascota " +
+                "Numero de mascota: " + idMascota +
+                "Nombre: " + nombre +
+                ", edad: " + edad +
+                ", peso: " + peso +
+                ", dueno: " + dueno.getNombre();
     }
 }
