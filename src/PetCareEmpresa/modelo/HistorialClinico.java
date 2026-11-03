@@ -5,20 +5,23 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Objects;
 
+//coleccion de todas las consultas de una mascota en especifico (o de varias)
 public class HistorialClinico {
-    //conjunto de todas las consultas de una mascota en especifico
-    private LocalDate fechaCreacion;
-    private List<Consulta> consultas;
+    private LocalDate fechaCreacion; //fecha desde la primer consulta de la mascota
+    private List<Consulta> consultas; //guarda todas las consultas de esa mascota
 
+    //inicializa sus atributos
     public HistorialClinico(LocalDate fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
         this.consultas = new ArrayList<>();
     }
 
+    //agrega consulta de la mascota para su historial
     public void agregarConsulta(Consulta consulta) {
         this.consultas.add(Objects.requireNonNull(consulta));
     }
 
+    //muestra las consultas hechas a una mascota
     public void mostrarConsultas() {
         System.out.println("Historial clínico actual");
         for (Consulta consultaAnterior : consultas) {
@@ -37,6 +40,7 @@ public class HistorialClinico {
         return consultas.size();
     }
 
+    //fecha de creacion del historial de la mascota
     public LocalDate getFechaCreacion() {
         return fechaCreacion;
     }

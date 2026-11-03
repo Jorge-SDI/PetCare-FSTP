@@ -1,31 +1,18 @@
 package PetCareEmpresa.modelo;
 
+//hereda atributos de mascota
 public class Perro extends Mascota {
-    private String raza;
-    private String nivelEnergia;
+    private String raza; //atributos propios
+    private String nivelEnergia; //atributos propios
 
-    public Perro(String nombre, int edad, double peso, String raza, String nivelEnergia){
-        super(nombre, edad, peso);
+    //inicializa atributos propios y heredados
+    public Perro(String nombre, int edad, double peso, Dueno dueno, String raza, String nivelEnergia){
+        super(nombre, edad, peso, dueno);
         this.raza = raza;
         this.nivelEnergia = nivelEnergia;
     }
 
-    public String getRaza() {
-        return raza;
-    }
-
-    public void setRaza(String raza) {
-        this.raza = raza;
-    }
-
-    public String getNivelEnergia() {
-        return nivelEnergia;
-    }
-
-    public void setNivelEnergia(String nivelEnergia) {
-        this.nivelEnergia = nivelEnergia;
-    }
-
+    //implementa metodo de sonido de Mascota
     @Override
     public void emitirSonido(){
         System.out.println("Woof woof");

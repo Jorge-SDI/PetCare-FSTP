@@ -1,21 +1,16 @@
 package PetCareEmpresa.modelo;
 
+//hereda atributos de Mascota
 public class Gato extends Mascota {
-    private boolean esDomestico;
+    private boolean esDomestico; //atributo propio
 
-    public Gato(String nombre, int edad, double peso, boolean esDomestico){
-        super(nombre, edad, peso);
+    //inicializa sus atributos propios y heredados
+    public Gato(String nombre, int edad, double peso, Dueno dueno, boolean esDomestico){
+        super(nombre, edad, peso, dueno);
         this.esDomestico = esDomestico;
     }
 
-    public boolean getEsDomestico() {
-        return esDomestico;
-    }
-
-    public void setEsDomestico(boolean esDomestico) {
-        this.esDomestico = esDomestico;
-    }
-
+    //metodo abstracto heredado de Mascota
     @Override
     public void emitirSonido(){
         System.out.println("Miauuu");

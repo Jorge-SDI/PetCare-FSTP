@@ -2,7 +2,7 @@ package PetCareEmpresa.modelo;
 import java.time.LocalDate;
 
 public class Consulta {
-    //representa una atención medica ya realizada
+    //representa la atencion de una cita
     private LocalDate fecha;
     private String diagnostico;
     private String observaciones;
@@ -19,25 +19,28 @@ public class Consulta {
         return fecha;
     }
 
+    //diagnostico registrado en la consulta
     public String getDiagnostico() {
         return diagnostico;
     }
 
+    //observaciones del diagnostico de la consulta
     public String getObservaciones() {
         return observaciones;
     }
 
+    //tratamiento registrado de la consulta
     public String getTratamiento() {
         return tratamiento;
     }
 
+    //datos generales de la consulta
     @Override
     public String toString() {
-        return "Consulta{" +
+        return "Consulta: " +
                 "Fecha: " + fecha +
                 ", Diagnostico: " + diagnostico + '\'' +
                 ", Observaciones: " + observaciones + '\'' +
-                ", Tratamiento: " + tratamiento + '\'' +
-                '}';
+                ", Tratamiento: " + tratamiento;
     }
 }

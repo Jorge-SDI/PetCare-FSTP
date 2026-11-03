@@ -1,21 +1,15 @@
 package PetCareEmpresa.modelo;
-
+//herencia de Animal
 public class Ave extends Mascota {
-    private double longitudAlas;
+    private double longitudAlas; //atributo propio de la clase
 
-    public Ave(String nombre, int edad, double peso, double longitudAlas) {
-        super(nombre, edad, peso);
+    //constructor con valores propios y heredados
+    public Ave(String nombre, int edad, double peso, Dueno dueno, double longitudAlas) {
+        super(nombre, edad, peso, dueno);
         this.longitudAlas = longitudAlas;
     }
 
-    public double getLongitudAlas() {
-        return longitudAlas;
-    }
-
-    public void setLongitudAlas(double longitudAlas) {
-        this.longitudAlas = longitudAlas;
-    }
-
+    //implementa metodo heredado de Mascota
     @Override
     public void emitirSonido(){
         System.out.println("Cocoroch");
