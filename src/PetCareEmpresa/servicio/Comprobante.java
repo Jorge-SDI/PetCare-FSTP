@@ -7,12 +7,14 @@ import java.util.List;
 //importacion del modulo de citas
 import PetCareEmpresa.modelo.*;
 
+//muestra el comprobante con todos los servicios de una consulta
 public class Comprobante {
-    private int folio;
-    private LocalDate fechaEmision;
-    private List<DetalleComprobante> detalles;
-    private Cita cita;
+    private int folio; //numero de comprobante
+    private LocalDate fechaEmision; //fecha de expedición
+    private List<DetalleComprobante> detalles; //coleccion de detalles (desglosa que cosas se pagaron)
+    private Cita cita; //referencia a una cita en especifico
 
+    //inicializa atributos propios y referenciados
     public Comprobante(int folio, LocalDate fechaEmision, Cita cita){
         setFolio(folio);
         setFechaEmision(fechaEmision);
@@ -24,18 +26,22 @@ public class Comprobante {
         this.detalles.add(Objects.requireNonNull(detalleComprobante));
     }
 
+    //obtener el numero de comprobante
     public int getFolio() {
         return folio;
     }
 
+    //asignar un numero de comprobante
     public void setFolio(int folio) {
         this.folio = Objects.requireNonNull(folio, "El numero de folio no puede ser nulo");
     }
 
+    //obtener la fecha de expedicion
     public LocalDate getFechaEmision() {
         return fechaEmision;
     }
 
+    //asignar una fecha de emision del comprobante
     public void setFechaEmision(LocalDate fechaEmision) {
         this.fechaEmision = Objects.requireNonNull(fechaEmision, "La fecha no puede tener registros vacios");
     }
@@ -44,6 +50,7 @@ public class Comprobante {
         return cita;
     }
 
+    //caclular el total de servicios para el comprobante
     public double calcularTotal(){
         double total = 0;
         for(DetalleComprobante detalleComprobante : detalles){
@@ -52,22 +59,7 @@ public class Comprobante {
         return total;
     }
 
-    public void imprimirComprobante(){
-        if (detalles.isEmpty()) {
-            System.out.println("El comprobante no contiene ningun servicio.");
-            return;
-        }
-        System.out.println("Generando comprobante...");
-        System.out.println("Clinica Veterinaria PetCare");
-        System.out.print("Folio: " + getFolio() + "     " + "Fecha: " + getFechaEmision());
-        System.out.println("Servicios utilizados: ");
-        for(DetalleComprobante detalleComprobante : detalles){
-            System.out.println(detalleComprobante.toString());
-        }
-        System.out.println("Total: " + calcularTotal());
-        System.out.println("¡Gracias por preferencia!");
-    }
-
+    //datos generales del comprobante
     @Override
     public String toString() {
         return "Comprobante de servicio" +

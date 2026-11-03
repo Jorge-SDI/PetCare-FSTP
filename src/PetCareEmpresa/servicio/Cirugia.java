@@ -1,10 +1,12 @@
 package PetCareEmpresa.servicio;
 
+//hereda atributos de Servicios
 public class Cirugia extends Servicios{
-    private int horasQuirofano;
-    private int complejidadCirugia;
+    private int horasQuirofano; //atributos propios
+    private int complejidadCirugia; // el costo se calcula en base a ellos
 
-    public  Cirugia(int horasQuirofano, int complejidadCirugia, String nombre, String descripcion){
+    //inicializa atributos propios y heredados
+    public Cirugia(int horasQuirofano, int complejidadCirugia, String nombre, String descripcion){
         super(nombre,descripcion);
         setHorasQuirofano(horasQuirofano);
         setComplejidadCirugia(complejidadCirugia);
@@ -14,6 +16,7 @@ public class Cirugia extends Servicios{
         return horasQuirofano;
     }
 
+    //asignar horas de duracion de la cirugia
     public void setHorasQuirofano(int horasQuirofano) {
         if(horasQuirofano < 0){
             throw new IllegalArgumentException("La hora de duracion no puede ser menor a 0");
@@ -21,10 +24,7 @@ public class Cirugia extends Servicios{
         this.horasQuirofano = horasQuirofano;
     }
 
-    public int getComplejidadCirugia() {
-        return complejidadCirugia;
-    }
-
+    //asigna una complejidad entre el 1 al 5 a la cirugia
     public void setComplejidadCirugia(int complejidadCirugia) {
         if(complejidadCirugia < 1 || complejidadCirugia > 5){
             throw new IllegalArgumentException("La complejidad debe estar entre 1 y 5");
@@ -32,6 +32,7 @@ public class Cirugia extends Servicios{
         this.complejidadCirugia = complejidadCirugia;
     }
 
+    //metodo implementado de la interfaz para calcular el costo del sevicio (cirugia)
     @Override
     public double calcularCosto() {
         if (complejidadCirugia == 1) {
@@ -68,9 +69,10 @@ public class Cirugia extends Servicios{
         return 0;
     }
 
+    //datos generales de la cirugia
     @Override
     public String toString() {
         return super.toString() + "horas de cirugia: " + horasQuirofano +
-                ", complejidad de la cirugia: " + complejidadCirugia ;
+                ", complejidad de la cirugia: " + complejidadCirugia;
     }
 }
